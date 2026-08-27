@@ -1,0 +1,27 @@
+{
+  "date": "YYYY-MM-DD",
+  "generatedAt": "YYYY-MM-DDTHH:mm:ss.sssZ",
+  "status": "published",
+  "items": [
+    {
+      "id": "stable-event-id",
+      "title": "权威原文标题",
+      "source": "发布机构或媒体",
+      "sourceUrl": "https://example.gov/original-article",
+      "publishedAt": "YYYY-MM-DD",
+      "summary": "80至140字、只依据原文的事实摘要。",
+      "region": "国内",
+      "topic": "公共数据治理",
+      "isFollowUp": false,
+      "analysis": {
+        "problem": "问题界定",
+        "stakeholders": "利益相关者",
+        "mechanism": "作用机制",
+        "tools": "政策工具组合",
+        "metrics": "评估指标",
+        "risks": "风险",
+        "oralTip": "适合3至5分钟作答的口述提示"
+      }
+    }
+  ]
+}

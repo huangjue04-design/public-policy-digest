@@ -37,11 +37,11 @@ async function main() {
     return;
   }
   if (new Set(dates).size !== dates.length) throw new Error("dates.json 存在重复日期");
-  const latest = Digest.parse(await json("latest.json"));
-  if (latest.date !== dates[0]) throw new Error("latest.json 日期必须等于 dates.json 第一项");
+  let latest: z.infer<typeof Digest> | undefined;
   const weeklyIds = new Map<string, Set<string>>();
   for (const date of dates) {
     const digest = Digest.parse(await json(`${date}.json`));
+    if (date === dates[0]) latest = digest;
     if (digest.date !== date) throw new Error(`${date}.json 内部日期不一致`);
     const domestic = digest.items.filter((item) => item.region === "国内").length;
     if (domestic < 7 || domestic > 8) throw new Error(`${date} 国内内容必须为7或8条`);
@@ -55,7 +55,7 @@ async function main() {
     }
     weeklyIds.set(weekKey(date), ids);
   }
-  console.log(`校验通过：${dates.length}期，最新一期${latest.items.length}条`);
+  console.log(`校验通过：${dates.length}期，最新一期${latest?.items.length ?? 0}条`);
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });

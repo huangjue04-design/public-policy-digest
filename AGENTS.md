@@ -10,7 +10,7 @@
 4. 优先人口老龄化与养老服务、基层治理与数字技术、教育公平、平台治理/算法治理、人工智能公共治理、未成年人保护、公共数据治理，同时不得遗漏近期重大国内公共事件。
 5. 每条只依据原文生成：80–140 字事实摘要，以及问题界定、利益相关者、作用机制、政策工具组合、评估指标、风险、口述提示。分析总长度约 350–550 字，适合社会学本科背景者 3–5 分钟口述。
 6. 原文没有的信息不得补写；标题、来源、发布日期和直达链接必须逐项核验。
-7. 复制 `docs/digest-template.json` 的结构，写入 `public/data/YYYY-MM-DD.json`；同步覆盖 `public/data/latest.json`，并把日期插入 `public/data/dates.json` 首位，仅保留最近 30 期。
+7. 复制 `docs/digest-template.json` 的结构，写入 `public/data/YYYY-MM-DD.json`；把日期插入 `public/data/dates.json` 首位，仅保留最近 30 期。网页把日期索引第一项视为最新一期。
 8. 依次运行 `npm run validate:digest`、`npm run typecheck`、`npm run build`。失败时修正数据，不发布半成品。
 9. 验证成功后提交并推送到 `origin/main`，提交信息使用 `data: update policy digest YYYY-MM-DD`。推送将自动触发 GitHub Pages 发布。
 

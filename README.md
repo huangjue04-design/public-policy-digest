@@ -34,7 +34,6 @@ Codex 会自行完成搜索、原文核验、历史去重、JSON 写入、构建
 ## 数据文件
 
 ```text
-public/data/latest.json       最新一期
 public/data/dates.json        最近30期日期索引
 public/data/YYYY-MM-DD.json   每日历史
 ```
